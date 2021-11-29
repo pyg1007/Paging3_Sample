@@ -1,5 +1,6 @@
 package kr.ryan.paging_sample.data
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -10,7 +11,17 @@ import com.google.gson.annotations.SerializedName
  * Description:
  */
 data class GitHubResponse(
-    @SerializedName("total_count") val total: Long,
-    @SerializedName("incomplete_results") val incompleteResult : Boolean,
-    @SerializedName("item") val gitHubItem: List<GitHubItem>
-)
+    @SerializedName("total_count")
+    @Expose
+    val totalCount: Int,
+    @SerializedName("incomplete_results")
+    @Expose
+    val incompleteResults: Boolean,
+    @SerializedName("items")
+    @Expose
+    val items: List<GitHubItem>?
+){
+    companion object{
+        val EMPTY = GitHubResponse(0, false, null)
+    }
+}

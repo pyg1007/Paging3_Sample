@@ -1,5 +1,6 @@
 package kr.ryan.paging_sample.data
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -10,9 +11,19 @@ import com.google.gson.annotations.SerializedName
  * Description:
  */
 data class GitHubLicense(
-    @SerializedName("key") val key : String,
-    @SerializedName("name") val name : String,
-    @SerializedName("spdx_id") val spdx_id : String,
-    @SerializedName("url") val url : String,
-    @SerializedName("node_id") val node_id : String
+    @SerializedName("key")
+    @Expose
+    val key: String,
+    @SerializedName("name")
+    @Expose
+    val name: String,
+    @SerializedName("spdx_id")
+    @Expose
+    val spdxId: String,
+    @SerializedName("url")
+    @Expose
+    val url: Any,
+    @SerializedName("node_id")
+    @Expose
+    val nodeId: String
 )

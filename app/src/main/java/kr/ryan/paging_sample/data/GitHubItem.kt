@@ -1,5 +1,6 @@
 package kr.ryan.paging_sample.data
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -10,82 +11,238 @@ import com.google.gson.annotations.SerializedName
  * Description:
  */
 data class GitHubItem(
-    @SerializedName("id") val id: Long,
-    @SerializedName("node_id") val node_id: String,
-    @SerializedName("name") val name: String,
-    @SerializedName("full_name") val full_name: String,
-    @SerializedName("private") val private: Boolean,
-    @SerializedName("owner") val gitHubOwner: GitHubOwner,
-    @SerializedName("html_url") val html_url: String,
-    @SerializedName("description") val description: String,
-    @SerializedName("fork") val fork: Boolean,
-    @SerializedName("url") val url: String,
-    @SerializedName("forks_url") val forks_url: String,
-    @SerializedName("keys_url") val keys_url: String,
-    @SerializedName("collaborators_url") val collaborators_url: String,
-    @SerializedName("teams_url") val teams_url: String,
-    @SerializedName("hooks_url") val hooks_url: String,
-    @SerializedName("issue_events_url") val issue_events_url: String,
-    @SerializedName("events_url") val events_url: String,
-    @SerializedName("assignees_url") val assignees_url: String,
-    @SerializedName("branches_url") val branches_url: String,
-    @SerializedName("tags_url") val tags_url: String,
-    @SerializedName("blobs_url") val blobs_url: String,
-    @SerializedName("git_tags_url") val git_tags_url: String,
-    @SerializedName("git_refs_url") val git_refs_url: String,
-    @SerializedName("trees_url") val trees_url: String,
-    @SerializedName("statuses_url") val statuses_url: String,
-    @SerializedName("languages_url") val languages_url: String,
-    @SerializedName("stargazers_url") val stargazers_url: String,
-    @SerializedName("contributors_url") val contributors_url: String,
-    @SerializedName("subscribers_url") val subscribers_url: String,
-    @SerializedName("subscription_url") val subscription_url: String,
-    @SerializedName("commits_url") val commits_url: String,
-    @SerializedName("git_commits_url") val git_commits_url: String,
-    @SerializedName("comments_url") val comments_url: String,
-    @SerializedName("issue_comment_url") val issue_comment_url: String,
-    @SerializedName("contents_url") val contents_url: String,
-    @SerializedName("compare_url") val compare_url: String,
-    @SerializedName("merges_url") val merges_url: String,
-    @SerializedName("archive_url") val archive_url: String,
-    @SerializedName("downloads_url") val downloads_url: String,
-    @SerializedName("issues_url") val issues_url: String,
-    @SerializedName("pulls_url") val pulls_url: String,
-    @SerializedName("milestones_url") val milestones_url: String,
-    @SerializedName("notifications_url") val notifications_url: String,
-    @SerializedName("labels_url") val labels_url: String,
-    @SerializedName("releases_url") val releases_url: String,
-    @SerializedName("deployments_url") val deployments_url: String,
-    @SerializedName("created_at") val created_at: String,
-    @SerializedName("updated_at") val updated_at: String,
-    @SerializedName("pushed_at") val pushed_at: String,
-    @SerializedName("git_url") val git_url: String,
-    @SerializedName("ssh_url") val ssh_url: String,
-    @SerializedName("clone_url") val clone_url: String,
-    @SerializedName("svn_url") val svn_url: String,
-    @SerializedName("homepage") val homepage: String,
-    @SerializedName("size") val size: Long,
-    @SerializedName("stargazers_count") val stargazers_count: Long,
-    @SerializedName("watchers_count") val watchers_count: Long,
-    @SerializedName("language") val language: String,
-    @SerializedName("has_issues") val has_issues: Boolean,
-    @SerializedName("has_projects") val has_projects: Boolean,
-    @SerializedName("has_downloads") val has_downloads: Boolean,
-    @SerializedName("has_wiki") val has_wiki: Boolean,
-    @SerializedName("has_pages") val has_pages: Boolean,
-    @SerializedName("forks_count") val forks_count: Long,
-    @SerializedName("mirror_url") val mirror_url: String?,
-    @SerializedName("archived") val archived: Boolean,
-    @SerializedName("disabled") val disabled: Boolean,
-    @SerializedName("open_issues_count") val open_issues_count: Long,
-    @SerializedName("license") val license: GitHubLicense,
-    @SerializedName("allow_forking") val allow_forking: Boolean,
-    @SerializedName("is_template") val is_template: Boolean,
-    @SerializedName("topics") val topics: List<String>,
-    @SerializedName("visibility") val visibility: String,
-    @SerializedName("forks") val forks: Long,
-    @SerializedName("open_issues") val open_issues: Long,
-    @SerializedName("watchers") val watchers: Long,
-    @SerializedName("default_branch") val default_branch: String,
-    @SerializedName("score") val score: Double,
+    @SerializedName("id")
+    @Expose
+    val id: Int,
+    @SerializedName("node_id")
+    @Expose
+    val nodeId: String,
+    @SerializedName("name")
+    @Expose
+    val name: String,
+    @SerializedName("full_name")
+    @Expose
+    val fullName: String,
+    @SerializedName("private")
+    @Expose
+    val _private: Boolean,
+    @SerializedName("owner")
+    @Expose
+    val owner: GitHubOwner,
+    @SerializedName("html_url")
+    @Expose
+    val htmlUrl: String,
+    @SerializedName("description")
+    @Expose
+    val description: String,
+    @SerializedName("fork")
+    @Expose
+    val fork: Boolean,
+    @SerializedName("url")
+    @Expose
+    val url: String,
+    @SerializedName("forks_url")
+    @Expose
+    val forksUrl: String,
+    @SerializedName("keys_url")
+    @Expose
+    val keysUrl: String,
+    @SerializedName("collaborators_url")
+    @Expose
+    val collaboratorsUrl: String,
+    @SerializedName("teams_url")
+    @Expose
+    val teamsUrl: String,
+    @SerializedName("hooks_url")
+    @Expose
+    val hooksUrl: String,
+    @SerializedName("issue_events_url")
+    @Expose
+    val issueEventsUrl: String,
+    @SerializedName("events_url")
+    @Expose
+    val eventsUrl: String,
+    @SerializedName("assignees_url")
+    @Expose
+    val assigneesUrl: String,
+    @SerializedName("branches_url")
+    @Expose
+    val branchesUrl: String,
+    @SerializedName("tags_url")
+    @Expose
+    val tagsUrl: String,
+    @SerializedName("blobs_url")
+    @Expose
+    val blobsUrl: String,
+    @SerializedName("git_tags_url")
+    @Expose
+    val gitTagsUrl: String,
+    @SerializedName("git_refs_url")
+    @Expose
+    val gitRefsUrl: String,
+    @SerializedName("trees_url")
+    @Expose
+    val treesUrl: String,
+    @SerializedName("statuses_url")
+    @Expose
+    val statusesUrl: String,
+    @SerializedName("languages_url")
+    @Expose
+    val languagesUrl: String,
+    @SerializedName("stargazers_url")
+    @Expose
+    val stargazersUrl: String,
+    @SerializedName("contributors_url")
+    @Expose
+    val contributorsUrl: String,
+    @SerializedName("subscribers_url")
+    @Expose
+    val subscribersUrl: String,
+    @SerializedName("subscription_url")
+    @Expose
+    val subscriptionUrl: String,
+    @SerializedName("commits_url")
+    @Expose
+    val commitsUrl: String,
+    @SerializedName("git_commits_url")
+    @Expose
+    val gitCommitsUrl: String,
+    @SerializedName("comments_url")
+    @Expose
+    val commentsUrl: String,
+    @SerializedName("issue_comment_url")
+    @Expose
+    val issueCommentUrl: String,
+    @SerializedName("contents_url")
+    @Expose
+    val contentsUrl: String,
+    @SerializedName("compare_url")
+    @Expose
+    val compareUrl: String,
+    @SerializedName("merges_url")
+    @Expose
+    val mergesUrl: String,
+    @SerializedName("archive_url")
+    @Expose
+    val archiveUrl: String,
+    @SerializedName("downloads_url")
+    @Expose
+    val downloadsUrl: String,
+    @SerializedName("issues_url")
+    @Expose
+    val issuesUrl: String,
+    @SerializedName("pulls_url")
+    @Expose
+    val pullsUrl: String,
+    @SerializedName("milestones_url")
+    @Expose
+    val milestonesUrl: String,
+    @SerializedName("notifications_url")
+    @Expose
+    val notificationsUrl: String,
+    @SerializedName("labels_url")
+    @Expose
+    val labelsUrl: String,
+    @SerializedName("releases_url")
+    @Expose
+    val releasesUrl: String,
+    @SerializedName("deployments_url")
+    @Expose
+    val deploymentsUrl: String,
+    @SerializedName("created_at")
+    @Expose
+    val createdAt: String,
+    @SerializedName("updated_at")
+    @Expose
+    val updatedAt: String,
+    @SerializedName("pushed_at")
+    @Expose
+    val pushedAt: String,
+    @SerializedName("git_url")
+    @Expose
+    val gitUrl: String,
+    @SerializedName("ssh_url")
+    @Expose
+    val sshUrl: String,
+    @SerializedName("clone_url")
+    @Expose
+    val cloneUrl: String,
+    @SerializedName("svn_url")
+    @Expose
+    val svnUrl: String,
+    @SerializedName("homepage")
+    @Expose
+    val homepage: String,
+    @SerializedName("size")
+    @Expose
+    val size: String,
+    @SerializedName("stargazers_count")
+    @Expose
+    val stargazersCount: String,
+    @SerializedName("watchers_count")
+    @Expose
+    val watchersCount: Int,
+    @SerializedName("language")
+    @Expose
+    val language: String,
+    @SerializedName("has_issues")
+    @Expose
+    val hasIssues: Boolean,
+    @SerializedName("has_projects")
+    @Expose
+    val hasProjects: Boolean,
+    @SerializedName("has_downloads")
+    @Expose
+    val hasDownloads: Boolean,
+    @SerializedName("has_wiki")
+    @Expose
+    val hasWiki: Boolean,
+    @SerializedName("has_pages")
+    @Expose
+    val hasPages: Boolean,
+    @SerializedName("forks_count")
+    @Expose
+    val forksCount: Int,
+    @SerializedName("mirror_url")
+    @Expose
+    val mirrorUrl: Any,
+    @SerializedName("archived")
+    @Expose
+    val archived: Boolean,
+    @SerializedName("disabled")
+    @Expose
+    val disabled: Boolean,
+    @SerializedName("open_issues_count")
+    @Expose
+    val openIssuesCount: Int,
+    @SerializedName("license")
+    @Expose
+    val license: GitHubLicense,
+    @SerializedName("allow_forking")
+    @Expose
+    val allowForking: Boolean,
+    @SerializedName("is_template")
+    @Expose
+    val isTemplate: Boolean,
+    @SerializedName("topics")
+    @Expose
+    val topics: List<String>?,
+    @SerializedName("visibility")
+    @Expose
+    val visibility: String,
+    @SerializedName("forks")
+    @Expose
+    val forks: Int,
+    @SerializedName("open_issues")
+    @Expose
+    val openIssues: Int,
+    @SerializedName("watchers")
+    @Expose
+    val watchers: Int,
+    @SerializedName("default_branch")
+    @Expose
+    val defaultBranch: String,
+    @SerializedName("score")
+    @Expose
+    val score: Double
 )

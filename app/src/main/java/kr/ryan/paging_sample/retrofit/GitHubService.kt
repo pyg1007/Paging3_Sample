@@ -13,11 +13,11 @@ import retrofit2.http.Query
  */
 interface GitHubService {
 
-    @GET("repository?sort=stars")
+    @GET("repositories?sort=stars")
     suspend fun getGitHubSearchResult(
         @Query("q") query: String,
-        @Query("page") page: Int = 1,
-        @Query("per_page") per_page: Int = 30
+        @Query("page") page: Int,
+        @Query("per_page") per_page: Int
     ): GitHubResponse
 
 }
