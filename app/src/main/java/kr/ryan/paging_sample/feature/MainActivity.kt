@@ -15,7 +15,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kr.ryan.paging_sample.R
+import kr.ryan.paging_sample.adapter.GitHubAdapter
 import kr.ryan.paging_sample.databinding.ActivityMainBinding
+import kr.ryan.paging_sample.util.GitHubDiffUtil
 import kr.ryan.paging_sample.viewmodel.GitHubViewModel
 import javax.inject.Inject
 
@@ -26,25 +28,21 @@ class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<GitHubViewModel>()
 
     private lateinit var binding: ActivityMainBinding
+    private val adapter = GitHubAdapter(GitHubDiffUtil)
 
     init {
         lifecycleScope.launch {
             whenCreated {
-                //initView()
+                initLoad()
+                initRecycler()
             }
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 launch {
-//                    viewModel.searchResult.collectLatest {paging ->
-//                        Log.e("Init", "$paging")
-//                        paging?.map {
-//                            Log.e("data", "$it")
-//                        }
-//                    }
-                }
-
-                launch {
-                    viewModel.test.collectLatest {
-                        Log.e("Main", "$it")
+                    viewModel.searchResult.collectLatest {
+                        Log.e("result", "$it")
+                        it?.let {data ->
+                            adapter.submitData(data)
+                        }
                     }
                 }
             }
@@ -56,11 +54,12 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 
-//    private fun initView(){
-//        binding.tvTest.setOnClickListener {
-//            Log.e("onClick", "Click")
-//            viewModel.getSearchResultStream(binding.tvTest.text.toString())
-//        }
-//    }
+    private fun initRecycler(){
+        binding.recyclerGithub.adapter = GitHubAdapter(GitHubDiffUtil)
+    }
+
+    private fun initLoad(){
+        viewModel.getSearchResultStream("Android")
+    }
 
 }
