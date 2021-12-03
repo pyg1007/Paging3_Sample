@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProject/PagingSample/app/src/main/res/layout/activity_main.xml" value="0.14221014492753623" />
+        <entry key="..\:/AndroidProject/PagingSample/app/src/main/res/layout/item_load_state.xml" value="0.3651041666666667" />
+        <entry key="..\:/AndroidProject/PagingSample/app/src/main/res/layout/item_paging_test.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProject/PagingSample/app/src/main/res/layout/recycler_github_item.xml" value="0.20416666666666666" />
       </map>
     </option>

@@ -4,19 +4,18 @@
     <data>
         <variable
             name="item"
-            type="kr.ryan.paging_sample.data.GitHubItem" />
+            type="kr.ryan.paging_sample.data.TestIngMockData.Item" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="40dp">
 
         <TextView
             android:id="@+id/tv_title"
-            android:text="@{item.fullName}"
-            android:gravity="center"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="26sp"
+            android:text="@{item.title}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
